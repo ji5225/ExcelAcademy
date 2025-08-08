@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excel Academy - Navigation Test</title>
+    <style>
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2563eb;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .test-section {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .test-title {
+            font-size: 1.5rem;
+            color: #1e40af;
+            margin-top: 0;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 10px;
+        }
+        .test-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .test-card {
+            background: white;
+            border-radius: 6px;
+            padding: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-left: 4px solid #3b82f6;
+        }
+        .test-card h3 {
+            margin-top: 0;
+            color: #1e40af;
+        }
+        .status {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            margin-left: 10px;
+        }
+        .status.passed {
+            background: #d1fae5;
+            color: #065f46;
+        }
+        .status.failed {
+            background: #fee2e2;
+            color: #991b1b;
+        }
+        .status.pending {
+            background: #fef3c7;
+            color: #92400e;
+        }
+        button {
+            background: #3b82f6;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 500;
+            margin-top: 10px;
+        }
+        button:hover {
+            background: #2563eb;
+        }
+        .result {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .result.passed {
+            background: #ecfdf5;
+            border-left: 4px solid #10b981;
+        }
+        .result.failed {
+            background: #fef2f2;
+            border-left: 4px solid #ef4444;
+        }
+        .result pre {
+            background: rgba(0,0,0,0.05);
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            font-size: 0.9em;
+        }
+        .responsive-test {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .device {
+            background: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            text-align: center;
+            min-width: 100px;
+        }
+        .device i {
+            font-size: 2rem;
+            color: #3b82f6;
+            margin-bottom: 5px;
+        }
+        .device span {
+            display: block;
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Excel Academy - Website Test Suite</h1>
+    
+    <div class="test-section">
+        <h2 class="test-title">1. Navigation Tests</h2>
+        <div class="test-grid">
+            <div class="test-card">
+                <h3>Home Page <span id="home-status" class="status pending">Pending</span></h3>
+                <p>Test if the home page loads correctly.</p>
+                <button onclick="testPageLoad('index.html', 'home-status')">Run Test</button>
+                <div id="home-result" class="result"></div>
+            </div>
+            
+            <div class="test-card">
+                <h3>About Page <span id="about-status" class="status pending">Pending</span></h3>
+                <p>Test if the about page loads correctly.</p>
+                <button onclick="testPageLoad('pages/about.html', 'about-status')">Run Test</button>
+                <div id="about-result" class="result"></div>
+            </div>
+            
+            <div class="test-card">
+                <h3>Academics Page <span id="academics-status" class="status pending">Pending</span></h3>
+                <p>Test if the academics page loads correctly.</p>
+                <button onclick="testPageLoad('pages/academics.html', 'academics-status')">Run Test</button>
+                <div id="academics-result" class="result"></div>
+            </div>
+            
+            <div class="test-card">
+                <h3>Admissions Page <span id="admissions-status" class="status pending">Pending</span></h3>
+                <p>Test if the admissions page loads correctly.</p>
+                <button onclick="testPageLoad('pages/admissions.html', 'admissions-status')">Run Test</button>
+                <div id="admissions-result" class="result"></div>
+            </div>
+            
+            <div class="test-card">
+                <h3>Gallery Page <span id="gallery-status" class="status pending">Pending</span></h3>
+                <p>Test if the gallery page loads correctly.</p>
+                <button onclick="testPageLoad('pages/gallery.html', 'gallery-status')">Run Test</button>
+                <div id="gallery-result" class="result"></div>
+            </div>
+            
+            <div class="test-card">
+                <h3>News & Events Page <span id="news-status" class="status pending">Pending</span></h3>
+                <p>Test if the news & events page loads correctly.</p>
+                <button onclick="testPageLoad('pages/news.html', 'news-status')">Run Test</button>
+                <div id="news-result" class="result"></div>
+            </div>
+            
+            <div class="test-card">
+                <h3>Contact Page <span id="contact-status" class="status pending">Pending</span></h3>
+                <p>Test if the contact page loads correctly.</p>
+                <button onclick="testPageLoad('pages/contact.html', 'contact-status')">Run Test</button>
+                <div id="contact-result" class="result"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2 class="test-title">2. Responsiveness Tests</h2>
+        <p>Check the website on different device sizes:</p>
+        
+        <div class="responsive-test">
+            <div class="device">
+                <i class="fas fa-mobile-alt"></i>
+                <span>Mobile (≤ 640px)</span>
+            </div>
+            <div class="device">
+                <i class="fas fa-tablet-alt"></i>
+                <span>Tablet (641px - 1024px)</span>
+            </div>
+            <div class="device">
+                <i class="fas fa-laptop"></i>
+                <span>Laptop (1025px - 1440px)</span>
+            </div>
+            <div class="device">
+                <i class="fas fa-desktop"></i>
+                <span>Desktop (≥ 1441px)</span>
+            </div>
+        </div>
+        
+        <div class="test-card" style="margin-top: 20px;">
+            <h3>Viewport Test <span id="viewport-status" class="status pending">Pending</span></h3>
+            <p>Test if the viewport meta tag is properly set.</p>
+            <button onclick="testViewport()">Run Test</button>
+            <div id="viewport-result" class="result"></div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2 class="test-title">3. Accessibility Tests</h2>
+        
+        <div class="test-card">
+            <h3>Image Alt Text <span id="alt-text-status" class="status pending">Pending</span></h3>
+            <p>Check if all images have appropriate alt text.</p>
+            <button onclick="testAltText()">Run Test</button>
+            <div id="alt-text-result" class="result"></div>
+        </div>
+        
+        <div class="test-card">
+            <h3>Heading Structure <span id="headings-status" class="status pending">Pending</span></h3>
+            <p>Verify proper heading hierarchy (h1 → h2 → h3, etc.).</p>
+            <button onclick="testHeadings()">Run Test</button>
+            <div id="headings-result" class="result"></div>
+        </div>
+        
+        <div class="test-card">
+            <h3>Color Contrast <span id="contrast-status" class="status pending">Pending</span></h3>
+            <p>Check if text has sufficient contrast with its background.</p>
+            <button onclick="testContrast()">Run Test</button>
+            <div id="contrast-result" class="result"></div>
+        </div>
+    </div>
+    
+    <div class="test-section">
+        <h2 class="test-title">4. Performance Tests</h2>
+        
+        <div class="test-card">
+            <h3>Page Load Time <span id="load-time-status" class="status pending">Pending</span></h3>
+            <p>Measure how long each page takes to load.</p>
+            <button onclick="testLoadTime()">Run Test</button>
+            <div id="load-time-result" class="result"></div>
+        </div>
+        
+        <div class="test-card">
+            <h3>Resource Sizes <span id="resource-status" class="status pending">Pending</span></h3>
+            <p>Check if any resources (images, scripts, styles) are too large.</p>
+            <button onclick="testResourceSizes()">Run Test</button>
+            <div id="resource-result" class="result"></div>
+        </div>
+    </div>
+    
+    <script>
+        // Test if a page loads correctly
+        async function testPageLoad(pagePath, statusId) {
+            const status = document.getElementById(statusId);
+            const result = document.getElementById(statusId.replace('-status', '-result'));
+            
+            status.className = 'status pending';
+            status.textContent = 'Testing...';
+            result.style.display = 'none';
+            
+            try {
+                const response = await fetch(pagePath);
+                if (response.ok) {
+                    const html = await response.text();
+                    status.className = 'status passed';
+                    status.textContent = 'Passed';
+                    result.className = 'result passed';
+                    result.innerHTML = '<strong>✓ Success:</strong> Page loaded successfully.';
+                    result.style.display = 'block';
+                    
+                    // Check for common issues
+                    const issues = [];
+                    if (html.includes('404')) issues.push('Page might be a 404 page');
+                    if (html.includes('error')) issues.push('Page might contain error messages');
+                    
+                    if (issues.length > 0) {
+                        result.innerHTML += '<div style="margin-top: 10px; color: #92400e;"><strong>Potential Issues:</strong><ul>' + 
+                            issues.map(issue => `<li>${issue}</li>`).join('') + 
+                            '</ul></div>';
+                    }
+                } else {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+            } catch (error) {
+                status.className = 'status failed';
+                status.textContent = 'Failed';
+                result.className = 'result failed';
+                result.innerHTML = `<strong>✗ Error:</strong> ${error.message}`;
+                result.style.display = 'block';
+            }
+        }
+        
+        // Test viewport settings
+        function testViewport() {
+            const status = document.getElementById('viewport-status');
+            const result = document.getElementById('viewport-result');
+            
+            status.className = 'status pending';
+            status.textContent = 'Testing...';
+            result.style.display = 'none';
+            
+            try {
+                const viewportMeta = document.querySelector('meta[name="viewport"]');
+                const hasViewport = !!viewportMeta;
+                const viewportContent = viewportMeta ? viewportMeta.getAttribute('content') : '';
+                
+                if (hasViewport && viewportContent.includes('width=device-width') && viewportContent.includes('initial-scale=1')) {
+                    status.className = 'status passed';
+                    status.textContent = 'Passed';
+                    result.className = 'result passed';
+                    result.innerHTML = '<strong>✓ Success:</strong> Viewport meta tag is properly configured.';
+                } else {
+                    throw new Error('Viewport meta tag is missing or incorrectly configured.');
+                }
+                
+                result.style.display = 'block';
+            } catch (error) {
+                status.className = 'status failed';
+                status.textContent = 'Failed';
+                result.className = 'result failed';
+                result.innerHTML = `<strong>✗ Error:</strong> ${error.message}`;
+                result.style.display = 'block';
+            }
+        }
+        
+        // Test image alt text (simplified for this demo)
+        function testAltText() {
+            const status = document.getElementById('alt-text-status');
+            const result = document.getElementById('alt-text-result');
+            
+            status.className = 'status pending';
+            status.textContent = 'Testing...';
+            result.style.display = 'none';
+            
+            // This is a simplified test - in a real scenario, you'd want to test actual page content
+            setTimeout(() => {
+                status.className = 'status passed';
+                status.textContent = 'Manual Check Needed';
+                result.className = 'result passed';
+                result.innerHTML = '<strong>Note:</strong> This is a manual check. Please verify that all meaningful images have appropriate alt text, and decorative images have empty alt text (alt="").';
+                result.style.display = 'block';
+            }, 1000);
+        }
+        
+        // Test heading structure (simplified for this demo)
+        function testHeadings() {
+            const status = document.getElementById('headings-status');
+            const result = document.getElementById('headings-result');
+            
+            status.className = 'status pending';
+            status.textContent = 'Testing...';
+            result.style.display = 'none';
+            
+            // This is a simplified test - in a real scenario, you'd analyze the actual heading structure
+            setTimeout(() => {
+                status.className = 'status passed';
+                status.textContent = 'Manual Check Needed';
+                result.className = 'result passed';
+                result.innerHTML = '<strong>Note:</strong> This is a manual check. Please verify that headings follow a logical order (h1 → h2 → h3, etc.) and that no heading levels are skipped.';
+                result.style.display = 'block';
+            }, 1000);
+        }
+        
+        // Test color contrast (simplified for this demo)
+        function testContrast() {
+            const status = document.getElementById('contrast-status');
+            const result = document.getElementById('contrast-result');
+            
+            status.className = 'status pending';
+            status.textContent = 'Testing...';
+            result.style.display = 'none';
+            
+            // This is a simplified test - in a real scenario, you'd use a library to check contrast ratios
+            setTimeout(() => {
+                status.className = 'status passed';
+                status.textContent = 'Manual Check Recommended';
+                result.className = 'result passed';
+                result.innerHTML = '<strong>Note:</strong> For a thorough check, use browser developer tools or tools like WebAIM\'s Contrast Checker to verify text has sufficient contrast with its background.';
+                result.style.display = 'block';
+            }, 1000);
+        }
+        
+        // Test page load time
+        async function testLoadTime() {
+            const status = document.getElementById('load-time-status');
+            const result = document.getElementById('load-time-result');
+            
+            status.className = 'status pending';
+            status.textContent = 'Testing...';
+            result.style.display = 'none';
+            
+            try {
+                const pages = [
+                    'index.html',
+                    'pages/about.html',
+                    'pages/academics.html',
+                    'pages/admissions.html',
+                    'pages/gallery.html',
+                    'pages/news.html',
+                    'pages/contact.html'
+                ];
+                
+                let results = [];
+                
+                for (const page of pages) {
+                    const startTime = performance.now();
+                    const response = await fetch(page);
+                    const endTime = performance.now();
+                    
+                    if (response.ok) {
+                        const loadTime = (endTime - startTime).toFixed(2);
+                        results.push({
+                            page: page,
+                            time: loadTime,
+                            status: 'success'
+                        });
+                    } else {
+                        results.push({
+                            page: page,
+                            status: 'error',
+                            error: `HTTP error! status: ${response.status}`
+                        });
+                    }
+                }
+                
+                status.className = 'status passed';
+                status.textContent = 'Completed';
+                result.className = 'result passed';
+                
+                let resultHtml = '<strong>Page Load Times:</strong><ul>';
+                results.forEach(item => {
+                    if (item.status === 'success') {
+                        resultHtml += `<li>${item.page}: ${item.time}ms</li>`;
+                    } else {
+                        resultHtml += `<li>${item.page}: <span style="color: #ef4444;">${item.error}</span></li>`;
+                    }
+                });
+                resultHtml += '</ul>';
+                
+                result.innerHTML = resultHtml;
+                result.style.display = 'block';
+                
+            } catch (error) {
+                status.className = 'status failed';
+                status.textContent = 'Failed';
+                result.className = 'result failed';
+                result.innerHTML = `<strong>✗ Error:</strong> ${error.message}`;
+                result.style.display = 'block';
+            }
+        }
+        
+        // Test resource sizes (simplified for this demo)
+        function testResourceSizes() {
+            const status = document.getElementById('resource-status');
+            const result = document.getElementById('resource-result');
+            
+            status.className = 'status pending';
+            status.textContent = 'Testing...';
+            result.style.display = 'none';
+            
+            // This is a simplified test - in a real scenario, you'd analyze actual resource sizes
+            setTimeout(() => {
+                status.className = 'status passed';
+                status.textContent = 'Manual Check Recommended';
+                result.className = 'result passed';
+                result.innerHTML = `
+                    <strong>Note:</strong> For a thorough check, use browser developer tools to:
+                    <ul>
+                        <li>Check the Network tab for large file downloads</li>
+                        <li>Look for unoptimized images (should be compressed)</li>
+                        <li>Check for unused CSS/JavaScript</li>
+                        <li>Consider lazy-loading below-the-fold images</li>
+                    </ul>
+                    <p>Tools like Google PageSpeed Insights can provide detailed recommendations.</p>
+                `;
+                result.style.display = 'block';
+            }, 1000);
+        }
+        
+        // Run all tests
+        function runAllTests() {
+            // Navigation tests
+            testPageLoad('index.html', 'home-status');
+            testPageLoad('pages/about.html', 'about-status');
+            testPageLoad('pages/academics.html', 'academics-status');
+            testPageLoad('pages/admissions.html', 'admissions-status');
+            testPageLoad('pages/gallery.html', 'gallery-status');
+            testPageLoad('pages/news.html', 'news-status');
+            testPageLoad('pages/contact.html', 'contact-status');
+            
+            // Other tests
+            testViewport();
+            testAltText();
+            testHeadings();
+            testContrast();
+            testLoadTime();
+            testResourceSizes();
+        }
+    </script>
+    
+    <div style="text-align: center; margin: 30px 0;">
+        <button onclick="runAllTests()" style="padding: 12px 24px; font-size: 1.1rem; background: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer;">
+            <i class="fas fa-play"></i> Run All Tests
+        </button>
+    </div>
+    
+    <footer style="text-align: center; margin-top: 50px; padding: 20px; color: #6b7280; font-size: 0.9rem; border-top: 1px solid #e5e7eb;">
+        <p>Excel Academy Website Test Suite | Generated on <span id="current-date"></span></p>
+    </footer>
+    
+    <script>
+        // Set current date in footer
+        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admissions - Excel Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">EA</div>
+                <a href="../index.html" class="text-2xl font-bold text-gray-800">Excel Academy</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            <nav class="hidden md:flex space-x-8">
+                <a href="../index.html" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                <a href="academics.html" class="text-gray-700 hover:text-blue-600 transition">Academics</a>
+                <a href="admissions.html" class="text-blue-600 font-medium">Admissions</a>
+                <a href="gallery.html" class="text-gray-700 hover:text-blue-600 transition">Gallery</a>
+                <a href="contact.html" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <div class="bg-blue-700 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Admissions</h1>
+            <p class="text-xl">Begin Your Journey to Excellence</p>
+        </div>
+    </div>
+
+    <!-- Process -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Admission Process</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-8">
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl mr-4">1</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Inquiry</h3>
+                        <p class="text-gray-700">Submit an inquiry form or visit our campus.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl mr-4">2</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Application</h3>
+                        <p class="text-gray-700">Complete the online application form.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl mr-4">3</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Assessment</h3>
+                        <p class="text-gray-700">Complete the entrance assessment.</p>
+                    </div>
+                </div>
+                
+                <div class="flex items-start">
+                    <div class="flex-shrink-0 w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 font-bold text-xl mr-4">4</div>
+                    <div>
+                        <h3 class="text-xl font-bold mb-2">Enrollment</h3>
+                        <p class="text-gray-700">Complete the enrollment process.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Important Dates -->
+    <section class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Important Dates</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold">Application Deadline</h3>
+                    <p class="text-gray-600">September 15, 2025</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold">Entrance Assessments</h3>
+                    <p class="text-gray-600">September 30, 2025</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-xl font-bold">Admission Results</h3>
+                    <p class="text-gray-600">November 1, 2025</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="py-16 bg-blue-700 text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-6">Have Questions?</h2>
+            <p class="text-xl mb-8">Contact our admissions team for assistance.</p>
+            <a href="contact.html" class="bg-white text-blue-700 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

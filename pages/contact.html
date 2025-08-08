@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Excel Academy</title>
+    <meta name="description" content="Get in touch with Excel Academy. Find our location, contact details, and send us a message.">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    
+    <style>
+        .contact-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .form-input:focus, .form-textarea:focus {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+        }
+        #map {
+            height: 400px;
+            width: 100%;
+            border-radius: 0.5rem;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <div class="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mr-3">EA</div>
+                <a href="../index.html" class="text-2xl font-bold text-gray-800">Excel Academy</a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="../index.html" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                <a href="about.html" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                <a href="academics.html" class="text-gray-700 hover:text-blue-600 transition">Academics</a>
+                <a href="admissions.html" class="text-gray-700 hover:text-blue-600 transition">Admissions</a>
+                <a href="gallery.html" class="text-gray-700 hover:text-blue-600 transition">Gallery</a>
+                <a href="news.html" class="text-gray-700 hover:text-blue-600 transition">News & Events</a>
+                <a href="contact.html" class="text-blue-600 font-medium">Contact</a>
+            </nav>
+        </div>
+        
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+            <div class="container mx-auto px-4 py-2 flex flex-col space-y-2">
+                <a href="../index.html" class="py-2 text-gray-700">Home</a>
+                <a href="about.html" class="py-2 text-gray-700">About</a>
+                <a href="academics.html" class="py-2 text-gray-700">Academics</a>
+                <a href="admissions.html" class="py-2 text-gray-700">Admissions</a>
+                <a href="gallery.html" class="py-2 text-gray-700">Gallery</a>
+                <a href="news.html" class="py-2 text-gray-700">News & Events</a>
+                <a href="contact.html" class="py-2 text-blue-600 font-medium">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <div class="bg-blue-700 text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">Contact Us</h1>
+            <p class="text-xl">We'd love to hear from you</p>
+        </div>
+    </div>
+
+    <!-- Contact Information -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-12">
+                <!-- Contact Card 1 -->
+                <div class="contact-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-map-marker-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Our Location</h3>
+                    <p class="text-gray-600 mb-2">123 Education Street</p>
+                    <p class="text-gray-600">New Delhi, 110001</p>
+                    <p class="text-gray-600">India</p>
+                </div>
+                
+                <!-- Contact Card 2 -->
+                <div class="contact-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-phone-alt text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Phone & Email</h3>
+                    <p class="text-gray-600 mb-2">+91 11 2345 6789</p>
+                    <p class="text-gray-600 mb-2">+91 98765 43210</p>
+                    <p class="text-gray-600">info@excelacademy.edu</p>
+                </div>
+                
+                <!-- Contact Card 3 -->
+                <div class="contact-card bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="far fa-clock text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Working Hours</h3>
+                    <p class="text-gray-600 mb-1">Monday - Friday: 8:00 AM - 4:00 PM</p>
+                    <p class="text-gray-600 mb-1">Saturday: 9:00 AM - 1:00 PM</p>
+                    <p class="text-gray-600">Sunday: Closed</p>
+                </div>
+            </div>
+            
+            <!-- Map and Contact Form -->
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Map -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">Find Us on Map</h2>
+                    <div id="map" class="shadow-lg">
+                        <!-- Map will be loaded via JavaScript -->
+                        <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                            <div class="text-center p-8">
+                                <i class="fas fa-map-marked-alt text-4xl text-gray-400 mb-4"></i>
+                                <p class="text-gray-600">Map loading...</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4">Connect With Us</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-600 text-white flex items-center justify-center hover:bg-blue-700 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-400 text-white flex items-center justify-center hover:bg-blue-500 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-pink-600 text-white flex items-center justify-center hover:bg-pink-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-red-600 text-white flex items-center justify-center hover:bg-red-700 transition">
+                                <i class="fab fa-youtube"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-blue-700 text-white flex items-center justify-center hover:bg-blue-800 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-2xl font-bold mb-6">Send Us a Message</h2>
+                    <form id="contactForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-gray-700 mb-1">First Name <span class="text-red-500">*</span></label>
+                                <input type="text" id="firstName" name="firstName" required 
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md form-input focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-gray-700 mb-1">Last Name <span class="text-red-500">*</span></label>
+                                <input type="text" id="lastName" name="lastName" required 
+                                    class="w-full px-4 py-2 border border-gray-300 rounded-md form-input focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address <span class="text-red-500">*</span></label>
+                            <input type="email" id="email" name="email" required 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md form-input focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md form-input focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                        
+                        <div>
+                            <label for="subject" class="block text-sm font-medium text-gray-700 mb-1">Subject <span class="text-red-500">*</span></label>
+                            <select id="subject" name="subject" required 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md form-input focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
+                                <option value="" disabled selected>Select a subject</option>
+                                <option value="admissions">Admissions Inquiry</option>
+                                <option value="academics">Academic Programs</option>
+                                <option value="faculty">Faculty Information</option>
+                                <option value="careers">Career Opportunities</option>
+                                <option value="feedback">Feedback & Suggestions</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Your Message <span class="text-red-500">*</span></label>
+                            <textarea id="message" name="message" rows="5" required 
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md form-textarea focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" id="newsletter" name="newsletter" class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded">
+                            <label for="newsletter" class="ml-2 block text-sm text-gray-700">
+                                Subscribe to our newsletter for updates and announcements
+                            </label>
+                        </div>
+                        
+                        <div>
+                            <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-md transition duration-300">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ Item 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-medium">What are the school hours?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Our regular school hours are from 8:00 AM to 2:30 PM, Monday through Friday. Office hours are from 8:00 AM to 4:00 PM on weekdays.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-medium">How can I schedule a campus tour?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">You can schedule a campus tour by calling our admissions office at +91 11 2345 6789 or by filling out the contact form on this page. We offer tours on weekdays between 9:00 AM and 2:00 PM.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-medium">What documents are required for admission?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">For admission, you'll need to submit the following documents: birth certificate, previous school records (if applicable), transfer certificate, passport-sized photographs, and address proof. Please visit our <a href="admissions.html" class="text-blue-600 hover:underline">Admissions page</a> for a complete list of required documents.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-medium">Do you offer scholarships or financial aid?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">Yes, we offer merit-based scholarships and need-based financial aid. Please contact our admissions office for more information about eligibility criteria and the application process.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full flex justify-between items-center p-4 text-left bg-gray-50 hover:bg-gray-100 transition">
+                        <span class="font-medium">What safety measures are in place at the school?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-4 border-t border-gray-200">
+                        <p class="text-gray-600">The safety of our students is our top priority. We have 24/7 security personnel, CCTV surveillance, controlled access to the campus, regular safety drills, and a comprehensive emergency response plan in place.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <p class="text-gray-600">Didn't find the answer you were looking for?</p>
+                <a href="#contactForm" class="inline-block mt-2 text-blue-600 font-medium hover:underline">Ask us your question</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript -->
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+        
+        // FAQ Toggle
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+                
+                // Toggle the content
+                content.classList.toggle('hidden');
+                
+                // Rotate the icon
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+                
+                // Close other open FAQs
+                document.querySelectorAll('.faq-toggle').forEach(otherButton => {
+                    if (otherButton !== button) {
+                        otherButton.nextElementSibling.classList.add('hidden');
+                        const otherIcon = otherButton.querySelector('i');
+                        otherIcon.classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+        
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(this);
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+            
+            // Here you would typically send the data to a server
+            console.log('Form submitted:', formObject);
+            
+            // Show success message
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+        
+        // Initialize map (this is a placeholder - you would use Google Maps or similar in production)
+        function initMap() {
+            // In a real implementation, you would initialize a map here
+            // For example, with Google Maps:
+            // const map = new google.maps.Map(document.getElementById('map'), {
+            //     center: {lat: 28.6139, lng: 77.2090}, // New Delhi coordinates
+            //     zoom: 15
+            // });
+            
+            // For now, we'll just show a placeholder
+            const mapElement = document.getElementById('map');
+            mapElement.innerHTML = `
+                <div class="w-full h-full bg-gray-200 flex items-center justify-center">
+                    <div class="text-center p-8">
+                        <i class="fas fa-map-marked-alt text-4xl text-gray-400 mb-4"></i>
+                        <h3 class="text-xl font-semibold text-gray-700 mb-2">Excel Academy</h3>
+                        <p class="text-gray-600">123 Education Street, New Delhi, 110001</p>
+                        <p class="text-gray-600 mt-4">Map would be displayed here with an actual implementation</p>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Initialize the map when the page loads
+        document.addEventListener('DOMContentLoaded', initMap);
+    </script>
+</body>
+</html>

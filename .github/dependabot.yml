@@ -1,0 +1,83 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+updates:
+  # Enable version updates for npm
+  - package-ecosystem: "npm"
+    # Look for `package.json` in the `root` directory
+    directory: "/"
+    # Check for updates once a week
+    schedule:
+      interval: "weekly"
+      # Check for updates on Monday at 9am UTC
+      time: "09:00"
+      # Use UTC timezone (default)
+      timezone: "UTC"
+    # Assign pull requests for security and version updates to user with ID 12345678
+    assignees:
+      - "your-github-username"
+    # Add labels to all dependency updates
+    labels:
+      - "dependencies"
+      - "javascript"
+    # Group updates for minor and patch versions together
+    versioning-strategy: increase
+    # Only allow updates to the lockfile once per day
+    open-pull-requests-limit: 10
+    # Automatically merge patch and minor updates that pass checks
+    target-branch: "dependabot-updates"
+    # Allow Dependabot to create a branch for this update
+    create-pull-requests: true
+    # Commit message
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+    # Rebase strategy
+    rebase-strategy: "auto"
+    # Ignore updates for specific dependencies
+    ignore:
+      - dependency-name: "eslint"
+        versions: ["8.x"]
+      - dependency-name: "typescript"
+        versions: ["5.x"]
+
+  # Enable version updates for GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      time: "09:00"
+      timezone: "UTC"
+    labels:
+      - "github-actions"
+      - "dependencies"
+    assignees:
+      - "your-github-username"
+
+# Configuration for security updates
+security_updates:
+  # Automatically update vulnerable dependencies
+  enabled: true
+  # Apply security updates to all branches
+  apply_updates: true
+  # Create pull requests for security updates
+  pull_requests:
+    enabled: true
+    labels:
+      - "security"
+    assignees:
+      - "your-github-username"
+    milestone: 1
+    reviewers:
+      - "your-github-username"
+    team_reviewers:
+      - "security-team"
+    auto_merge:
+      enabled: true
+      method: "squash"
+      commit_message:
+        prefix: "chore(security)"
+        include_scope: true

@@ -1,0 +1,77 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://excelacademy.edu/sitemap.xml
+
+# Disallow admin and internal pages
+Disallow: /admin/
+Disallow: /private/
+Disallow: /includes/
+Disallow: /config/
+
+# Allow all user agents to access the following directories
+Allow: /assets/
+Allow: /css/
+Allow: /js/
+Allow: /images/
+
+# Crawl-delay: 10  # Uncomment and adjust if needed to limit crawl rate
+
+# Specific rules for search engines
+# Googlebot-Image: Allow all images to be indexed
+User-agent: Googlebot-Image
+Allow: /*
+Disallow: 
+
+# Block specific pages from search engines
+# Disallow: /temporary-page.html
+# Disallow: /under-construction/
+
+# Block specific file types
+# Disallow: /*.pdf$
+# Disallow: /*.doc$
+# Disallow: /*.xls$
+
+# Block specific query parameters
+# Disallow: /*?*sort=
+# Disallow: /*?*filter=
+
+# Block specific sections
+# Disallow: /search/
+# Disallow: /api/
+
+# Development and staging environments
+# User-agent: *
+# Disallow: /staging/
+# Disallow: /test/
+# Disallow: /dev/
+
+# Production environment (uncomment when going live)
+# User-agent: *
+# Disallow: /staging/
+# Disallow: /test/
+# Disallow: /dev/
+# Disallow: /*.json$
+# Disallow: /*.xml$
+# Disallow: /?s=
+# Disallow: /search/
+# Disallow: /feed/
+# Disallow: */feed/
+# Disallow: */trackback/
+# Disallow: /wp-json/
+# Disallow: /wp-admin/
+# Allow: /wp-admin/admin-ajax.php
+
+# Host directive (recommended by Google)
+# Host: excelacademy.edu
+
+# Crawl-delay (be careful with this as it affects all search engines)
+# Crawl-delay: 10
+
+# Clean-param: ref /products/  # Remove specific URL parameters
+
+# Additional sitemaps (if you have more than one)
+# Sitemap: https://excelacademy.edu/images-sitemap.xml
+# Sitemap: https://excelacademy.edu/videos-sitemap.xml

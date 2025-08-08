@@ -1,0 +1,64 @@
+# This is a comment.
+# Each line is a file pattern followed by one or more owners.
+
+# These owners will be the default owners for everything in the repo.
+# The last matching pattern has the most precedence.
+*       @your-github-username @team/developers
+
+# Documentation
+/docs/ @your-github-username @team/documentation
+/README.md @your-github-username
+/CONTRIBUTING.md @your-github-username
+/CHANGELOG.md @your-github-username
+
+# Configuration files
+/.github/ @your-github-username @team/devops
+/package.json @your-github-username @team/frontend
+/package-lock.json @your-github-username @team/frontend
+/*.config.js @your-github-username @team/frontend
+
+# Source code
+/src/ @your-github-username @team/frontend
+/assets/ @your-github-username @team/design
+
+# Tests
+/tests/ @your-github-username @team/qa
+/__tests__/ @your-github-username @team/qa
+*.test.js @your-github-username @team/qa
+
+# Build output
+/dist/ @your-github-username @team/devops
+/build/ @your-github-username @team/devops
+
+# Environment files
+.env* @your-github-username @team/devops
+.env @your-github-username @team/devops
+.env.local @your-github-username @team/devops
+.env.development @your-github-username @team/developers
+.env.test @your-github-username @team/qa
+.env.production @your-github-username @team/devops
+
+# Security
+SECURITY.md @your-github-username @team/security
+.github/SECURITY.md @your-github-username @team/security
+
+# Dependabot configuration
+.github/dependabot.yml @your-github-username @team/devops
+
+# GitHub Actions workflows
+.github/workflows/ @your-github-username @team/devops
+
+# Issue and Pull Request templates
+.github/ISSUE_TEMPLATE/ @your-github-username @team/documentation
+.github/PULL_REQUEST_TEMPLATE.md @your-github-username @team/documentation
+
+# License and legal
+LICENSE @your-github-username @team/legal
+NOTICE @your-github-username @team/legal
+
+# Special files
+CITATION.cff @your-github-username @team/documentation
+FUNDING.yml @your-github-username @team/finance
+
+# This file itself
+.github/CODEOWNERS @your-github-username @team/devops

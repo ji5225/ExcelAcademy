@@ -1,0 +1,41 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Excel Academy Website"
+type: software
+version: 1.0.0
+date-released: 2025-08-08
+license: MIT
+license-url: https://opensource.org/licenses/MIT
+doi: 10.5281/zenodo.1234567  # Replace with your actual DOI if available
+repository-code: "https://github.com/yourusername/school-website"
+url: "https://excelacademy.edu"
+keywords:
+  - education
+  - school
+  - website
+  - static-site
+  - tailwindcss
+  - html5
+  - javascript
+
+authors:
+  - family-names: "Doe"
+    given-names: "John"
+    orcid: "https://orcid.org/0000-0000-0000-0000"  # Replace with actual ORCID
+    email: "john.doe@excelacademy.edu"
+    affiliation: "Excel Academy"
+    website: "https://excelacademy.edu"
+
+preferred-citation:
+  title: "Excel Academy Website: A Modern, Accessible School Website"
+  type: software
+  authors:
+    - family-names: "Doe"
+      given-names: "John"
+  version: 1.0.0
+  date-released: 2025-08-08
+  license: MIT
+  url: "https://github.com/yourusername/school-website"
+  doi: 10.5281/zenodo.1234567  # Replace with your actual DOI if available
+  repository: "https://github.com/yourusername/school-website"
+  message: "This is the preferred citation for this project."

@@ -1,0 +1,129 @@
+# GitHub repository settings
+# This file configures various repository settings through GitHub's API
+
+# Repository name and description
+repository:
+  name: school-website
+  description: "A modern, responsive website for Excel Academy built with HTML5, TailwindCSS, and vanilla JavaScript"
+  homepage: "https://excelacademy.edu"
+  private: false
+  has_issues: true
+  has_projects: true
+  has_wiki: false
+  has_downloads: true
+  default_branch: "main"
+  allow_squash_merge: true
+  allow_merge_commit: false
+  allow_rebase_merge: false
+  delete_branch_on_merge: true
+  allow_auto_merge: true
+  vulnerability_alerts: true
+
+# Branch protection rules
+branches:
+  - name: main
+    protection:
+      required_pull_request_reviews:
+        required_approving_review_count: 1
+        require_code_owner_reviews: true
+        dismiss_stale_reviews: true
+        require_last_push_approval: true
+      required_status_checks:
+        strict: true
+        contexts:
+          - "ci-cd / test"
+          - "ci-cd / build"
+      enforce_admins: false
+      required_linear_history: true
+      allow_force_pushes: false
+      allow_deletions: false
+      required_conversation_resolution: true
+
+# Issue and Pull Request templates
+issue_template: "default"
+pull_request_template: true
+
+# Labels
+labels:
+  - name: "bug"
+    color: "d73a4a"
+    description: "Something isn't working"
+  - name: "documentation"
+    color: "0075ca"
+    description: "Improvements or additions to documentation"
+  - name: "duplicate"
+    color: "cfd3d7"
+    description: "This issue or pull request already exists"
+  - name: "enhancement"
+    color: "a2eeef"
+    description: "New feature or request"
+  - name: "good first issue"
+    color: "7057ff"
+    description: "Good for newcomers"
+  - name: "help wanted"
+    color: "008672"
+    description: "Extra attention is needed"
+  - name: "invalid"
+    color: "e4e669"
+    description: "This doesn't seem right"
+  - name: "question"
+    color: "d876e3"
+    description: "Further information is requested"
+  - name: "wontfix"
+    color: "ffffff"
+    description: "This will not be worked on"
+  - name: "dependencies"
+    color: "0366d6"
+    description: "Pull requests that update dependencies"
+  - name: "security"
+    color: "b60205"
+    description: "Security related issues and pull requests"
+
+# Milestones
+milestones:
+  - title: "v1.0.0"
+    description: "Initial stable release"
+    state: "open"
+    due_on: "2025-09-01T00:00:00Z"
+
+# Collaborators
+collaborators:
+  - username: "your-github-username"
+    permission: "admin"
+  - team: "developers"
+    permission: "push"
+  - team: "documentation"
+    permission: "pull"
+
+# Webhooks
+webhooks:
+  - name: "web"
+    active: true
+    events:
+      - "*"
+    config:
+      url: "https://example.com/webhook"
+      content_type: "json"
+      secret: "your-secret"
+      insecure_ssl: "0"
+
+# GitHub Pages settings
+github_pages:
+  cname: "excelacademy.edu"
+  https_only: true
+  source:
+    branch: "gh-pages"
+    path: "/"
+
+# Security & analysis
+security_and_analysis:
+  advanced_security:
+    status: "enabled"
+  secret_scanning:
+    status: "enabled"
+  secret_scanning_push_protection:
+    status: "enabled"
+  dependabot_security_updates:
+    status: "enabled"
+  secret_scanning_validity_checks:
+    status: "enabled"

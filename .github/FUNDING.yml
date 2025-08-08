@@ -1,0 +1,26 @@
+# These are supported funding model platforms
+
+github: [your-github-username]  # Replace with your GitHub username
+patreon: # Replace with a single Patreon username
+open_collective: # Replace with a single Open Collective username
+ko_fi: # Replace with a single Ko-fi username
+tidelift: # Replace with a single Tidelift platform-name/package-name e.g., npm/babel
+community_bridge: # Replace with a single Community Bridge project-name e.g., cloud-foundry
+liberapay: # Replace with a single Liberapay username
+issuehunt: # Replace with a single IssueHunt username
+techalliance: # Replace with a single Custom URL
+gitcoin: # Replace with a single GitCoin grant URL
+github: [org1, org2] # Multiple GitHub sponsors
+github: [github_username1, github_username2] # Multiple individual sponsors
+
+# Custom URLs for donations
+custom: 
+  - 'https://www.paypal.me/yourusername'  # Replace with your PayPal.me link
+  - 'https://buymeacoffee.com/yourusername'  # Replace with your Buy Me a Coffee link
+  - 'https://patreon.com/yourusername'  # Replace with your Patreon link
+
+# Example configuration:
+# github: [sponsor1, sponsor2]
+# patreon: yourpatreonusername
+# open_collective: yourorgname
+# custom: ['https://paypal.me/example', 'https://buymeacoffee.com/example']
